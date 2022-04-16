@@ -45,7 +45,9 @@ QLine getShorterLine(QPoint p1, QPoint p2, const int thickness)
 {
     QLineF l(p1, p2);
     int val = ArrowHeight + thickness * 4;
-    if (l.length() < (val - thickness * 2)) {
+    if (l.length() < thickness * 2) {
+        l.setLength(0);
+    } else if (l.length() < (val - thickness * 2)) {
         // here should be 0, but then we lose "angle", so this is hack, but
         // looks not very bad
         val = thickness / 4;
