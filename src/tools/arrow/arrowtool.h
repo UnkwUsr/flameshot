@@ -21,6 +21,10 @@ public:
     CaptureTool* copy(QObject* parent = nullptr) override;
     void process(QPainter& painter, const QPixmap& pixmap) override;
 
+    QRect mousePreviewRect(const CaptureContext& context) const override;
+    void paintMousePreview(QPainter& painter,
+                           const CaptureContext& context) override;
+
 protected:
     void copyParams(const ArrowTool* from, ArrowTool* to);
     CaptureTool::Type type() const override;

@@ -161,3 +161,12 @@ void ArrowTool::pressed(CaptureContext& context)
 {
     Q_UNUSED(context)
 }
+
+QRect ArrowTool::mousePreviewRect(const CaptureContext& context) const
+{
+    return {};
+}
+
+void ArrowTool::paintMousePreview(QPainter& painter,
+                                  const CaptureContext& context)
+{}
