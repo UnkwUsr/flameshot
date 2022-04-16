@@ -150,8 +150,8 @@ void ArrowTool::process(QPainter& painter, const QPixmap& pixmap)
 {
     Q_UNUSED(pixmap)
     painter.setPen(QPen(color(), size()));
-    painter.drawLine(getShorterLine(points().first, points().second, size()));
-    m_arrowPath = getArrowHead(points().first, points().second, size());
+    painter.drawLine(getShorterLine(points().second, points().first, size()));
+    m_arrowPath = getArrowHead(points().second, points().first, size());
     painter.fillPath(m_arrowPath, QBrush(color()));
 }
 
