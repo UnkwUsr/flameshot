@@ -98,6 +98,13 @@ CaptureWidget::CaptureWidget(const CaptureRequest& req,
     // else xywhTick keeps triggering when not needed
     m_xywhTimer.setSingleShot(true);
     setAttribute(Qt::WA_DeleteOnClose);
+
+    // me
+    setWindowFlags(Qt::Widget | Qt::FramelessWindowHint | Qt::ToolTip |
+                   Qt::WindowStaysOnTopHint);
+    setAttribute(Qt::WA_NoSystemBackground, true);
+    setAttribute(Qt::WA_TranslucentBackground, true);
+
     setAttribute(Qt::WA_QuitOnClose, false);
     m_opacity = m_config.contrastOpacity();
     m_uiColor = m_config.uiColor();
@@ -112,6 +119,10 @@ CaptureWidget::CaptureWidget(const CaptureRequest& req,
         // Grab Screenshot
         bool ok = true;
         m_context.screenshot = ScreenGrabber().grabEntireDesktop(ok);
+
+        // me
+        m_context.screenshot.fill(Qt::transparent);
+
         if (!ok) {
             AbstractLogger::error() << tr("Unable to capture screen");
             this->close();
