@@ -372,7 +372,8 @@ void CaptureWidget::initButtons()
             vectorButtons << b;
         }
     }
-    m_buttonHandler->setButtons(vectorButtons);
+    // hide buttons panel ui
+    // m_buttonHandler->setButtons(vectorButtons);
 }
 
 void CaptureWidget::handleButtonRightClick(CaptureToolButton* b)
