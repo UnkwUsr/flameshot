@@ -1090,7 +1090,7 @@ void CaptureWidget::initPanel()
 #endif
     }
 
-    if (ConfigHandler().showSidePanelButton()) {
+    if (false && ConfigHandler().showSidePanelButton()) {
         auto* panelToggleButton =
           new OrientablePushButton(tr("Tool Settings"), this);
         makeChild(panelToggleButton);
