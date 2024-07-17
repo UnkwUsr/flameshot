@@ -1601,6 +1601,7 @@ void CaptureWidget::deleteCurrentTool()
 
 void CaptureWidget::updateSizeIndicator()
 {
+    return;
     if (m_config.showSelectionGeometry()) {
         showxywh();
     }
